@@ -33,7 +33,21 @@ class InstrumentController
             "title"=>"Instruments",
             "entities"=>$entities
         ]);
+    }
 
+
+    public function add()
+    {
+        switch($_SERVER['REQUEST_METHOD'])
+        {
+            case 'GET':
+                $template=$this->twig->load('instrument.add.twig');        
+                echo $template->render([
+                    "title"=>"Ajouter un instrument"
+                ]);
+                break;
+            
+        }
     }
 	
 	
